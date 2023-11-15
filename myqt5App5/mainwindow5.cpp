@@ -32,7 +32,7 @@ void MainWindow5::on_btnStart_clicked()
     CameraImageCapture = new QCameraImageCapture(Camera);
     //
     // connect(CameraImageCapture, &QCameraImageCapture::imageCaptured, this, &MainWindow::take_photo);
-    connect(CameraImageCapture,SIGNAL(imageCaptured(int,QImage)),this,SLOT(show_pic(int,Qimage)));
+    connect(CameraImageCapture,SIGNAL(imageCaptured(int,QImage)),this,SLOT(show_pic(int,QImage)));
     // connect(CameraImageCapture, &QCameraImageCapture::imageCaptured, this, &MainWindow5::show_pic);
     CameraViewFinder = new QCameraViewfinder(ui->widget);
 
@@ -57,10 +57,14 @@ void MainWindow5::on_btnCapture_clicked()
 {
     //qDebug() << "------------- on_btnCapture_clicked -----------------";
     showNowFunc("on_btnCapture_clicked()");
-    CameraImageCapture->capture("D:\\qtpic\a1"); //
+    CameraImageCapture->capture("D:\\qtpic\\a1"); //
+
+
+    //CameraImageCapture->capture("D:\\1.jpg"); //
+    // CameraImageCapture->capture("D:\\");
 }
 
-void MainWindow5::show_pic(int id,QImage &preview)
+void MainWindow5::show_pic(int id,const QImage &preview)
 {
     //没有进来，槽函数没绑定
     showNowFunc("show_pic(int id,QImage &preview)");
@@ -68,6 +72,7 @@ void MainWindow5::show_pic(int id,QImage &preview)
     QPixmap pix = QPixmap::fromImage(preview);
     pix = pix.scaled(ui->label->size());
     ui->label->setPixmap(pix);
+    //pix.save("D:\\qtpic\a1\1.jpg");
 }
 
 /*

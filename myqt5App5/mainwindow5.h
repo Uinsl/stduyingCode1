@@ -34,7 +34,7 @@ private slots:
 
     void on_btnCapture_clicked();
 
-    void show_pic(int id, QImage &preview);
+    void show_pic(int id,const QImage &preview);
 private:
     Ui::MainWindow5 *ui;
     //摄像头对象指针
