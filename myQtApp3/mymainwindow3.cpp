@@ -32,5 +32,6 @@ void myMainWindow3::hungrySlot()
 {
     // 触发gf_gfhungry
     emit gf->hungry();
+    // gf->hungry();
 }
 
