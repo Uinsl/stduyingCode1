@@ -11,6 +11,7 @@ myMainWindow3::myMainWindow3(QWidget *parent)
     me = new mew;
     gf = new GitlF;
     // 用指针定义me gf 然后 new 分配内存
+    // 类似 C++ int* p ; p = new int; *p=88;
     // mew me;
     // GitlF gf;
     // 就是一定要new 分配内存
